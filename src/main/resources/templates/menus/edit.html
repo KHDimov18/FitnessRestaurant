@@ -11,10 +11,10 @@
     <h1>Menus</h1>
     <form action="#" th:action="@{/menus/edit}" method="post" th:object="${menu}">
         <label>Title:</label>
-        <input type="text" th:field="*{Title}" /><br/>
+        <input type="text" th:field="*{Title}" class="form-control" /><br/>
         <select id="Products" th:field="*{Products}" multiple="multiple">
             <option th:each="product : ${allProducts}"
-                    th:value="${product.ProductId}" th:text="|${product.ProductId} - ${product.Title} - ${product.Calories}|">
+                    th:value="${product.ProductId}" th:text="|${product.ProductId} - ${product.Title} - ${product.Calories}|" >
             </option>
         </select>
         <input type="hidden" th:field="*{MenuId}" /><br/>
