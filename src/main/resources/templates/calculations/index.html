@@ -9,20 +9,20 @@
 <div class="container">
 <div align="center">
     <h1>Calculate intake</h1>
-    <form action="#" th:action="@{/calculations/add}" method="post" th:object="${calculation}">
+    <form action="#" th:action="@{/calculations/add}" method="post" th:object="${calculation}" class="form-group">
         <label>Height:</label>
-        <input type="text" th:field="*{Height}" /><br/>
+        <input type="text" th:field="*{Height}" class="form-control" /><br/>
         <label>Weight:</label>
-        <input type="text" th:field="*{Weight}" /><br/>
+        <input type="text" th:field="*{Weight}" class="form-control" /><br/>
         <label>Age:</label>
-        <input type="text" th:field="*{Age}" /><br/>
+        <input type="text" th:field="*{Age}" class="form-control" /><br/>
         <label>Menu:</label>
-        <select id="MenuId" th:field="*{MenuId}">
+        <select id="MenuId" th:field="*{MenuId}" class="form-control">
             <option th:each="menu : ${allMenus}"
                     th:value="${menu.MenuId}" th:text="|${menu.MenuId} - ${menu.Title}|">
             </option>
         </select><br>
-        <button type="submit">Add</button>
+        <button type="submit" class="btn btn-primary">Add</button>
     </form>
 </div>
 </div>

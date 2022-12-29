@@ -5,12 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/header :: header" class="form-control"></div>
 <div class="container">
-<h1>Product <span th:utext="${item.ProductId}"></span></h1>
-<label>ID: <span th:utext="${item.ProductId}"></span></label><br>
-<label>Title: <span th:utext="${item.Title}"></span></label><br>
-<label>Calories: <span th:utext="${item.Calories}"></span></label><br>
+<h1>Product <span th:utext="${item.ProductId}" class="form-control"></span></h1>
+<label>ID: <span th:utext="${item.ProductId}" class="form-control"></span></label><br>
+<label>Title: <span th:utext="${item.Title}" class="form-control"></span></label><br>
+<label>Calories: <span th:utext="${item.Calories}" class="form-control"></span></label><br>
 </div>
 <div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
 </body>

@@ -8,7 +8,7 @@
     <div th:replace="fragments/header :: header"></div>
     <div class="container">
     <h1>Calculations</h1>
-    <a th:href="@{/calculations}">Calculate</a>
+    <a th:href="@{/calculations}" class="btn btn-primary">Calculate</a>
     <table class="table table-striped">
         <thead  class="thead-dark">
         <tr>
@@ -30,8 +30,8 @@
             <td th:text="${calculation.ExtraCalories}" />
             <td th:text="${calculation.MenuId}" />
             <td>
-                <a th:href="@{/calculations/get/{id}/(id=${calculation.CalculationId})}">Details</a>
-                <a th:href="@{/calculations/delete/{id}/(id=${calculation.CalculationId})}">Delete</a>
+                <a th:href="@{/calculations/get/{id}/(id=${calculation.CalculationId})}" class="btn btn-primary">Details</a>
+                <a th:href="@{/calculations/delete/{id}/(id=${calculation.CalculationId})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </table>

@@ -8,7 +8,7 @@
 <div th:replace="fragments/header :: header"></div>
 <div class="container">
 <h1>Menus</h1>
-<a th:href="@{/menus/add}">Add new</a>
+<a th:href="@{/menus/add}" class="btn btn-primary">Add new</a>
     <table class="table table-striped">
         <thead  class="thead-dark">
         <tr>
@@ -23,9 +23,9 @@
         <td th:text="${menu.Title}" />
         <td th:text="${menu.getTotalCalories()}" />
         <td>
-            <a th:href="@{/menus/get/{id}/(id=${menu.MenuId})}">Details</a>
-            <a th:href="@{/menus/edit/{id}/(id=${menu.MenuId})}">Edit</a>
-            <a th:href="@{/menus/delete/{id}/(id=${menu.MenuId})}">Delete</a>
+            <a th:href="@{/menus/get/{id}/(id=${menu.MenuId})}" class="btn btn-primary">Details</a>
+            <a th:href="@{/menus/edit/{id}/(id=${menu.MenuId})}" class="btn btn-warning">Edit</a>
+            <a th:href="@{/menus/delete/{id}/(id=${menu.MenuId})}" class="btn btn-danger">Delete</a>
         </td>
     </tr>
 </table>

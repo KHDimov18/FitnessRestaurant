@@ -9,14 +9,14 @@
 <div class="container">
 <div align="center">
     <h1>Products</h1>
-    <form action="#" th:action="@{/products/edit}" method="post" th:object="${product}">
+    <form action="#" th:action="@{/products/edit}" method="post" th:object="${product}" class="form-control">
         <label>Title:</label>
-        <input type="text" th:field="*{Title}" /><br/>
+        <input type="text" th:field="*{Title}" class="form-control"/><br/>
         <label>Calories:</label>
-        <input type="text" th:field="*{Calories}" /><br/>
+        <input type="text" th:field="*{Calories}" class="form-control"/><br/>
 
-        <input type="hidden" th:field="*{ProductId}" /><br/>
-        <button type="submit">Edit</button>
+        <input type="hidden" th:field="*{ProductId}" class="form-control"/><br/>
+        <button type="submit" class="btn btn-primary">Edit</button>
 
     </form>
 </div>
