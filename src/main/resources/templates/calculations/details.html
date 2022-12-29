@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Calculation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+<h1>Calculation <span th:utext="${item.CalculationId}"></span></h1>
+<label>ID: <span th:utext="${item.CalculationId}"></span></label><br>
+    <label>Height: <span th:utext="${item.Height}"></span></label><br>
+    <label>Weight: <span th:utext="${item.Weight}"></span></label><br>
+    <label>Age: <span th:utext="${item.Age}"></span></label><br>
+    <label>Calories Intake: <span th:utext="${item.CaloriesIntake}"></span></label><br>
+    <label>Extra Calories: <span th:utext="${item.ExtraCalories}"></span></label><br>
+    <label>Menu Id: <span th:utext="${item.MenuId}"></span></label>
+    <h2>Products in Menu</h2>
+    <p th:each="product: ${products}"><span th:text="${product.Title}"></span> - <span th:text="${product.Calories}"></span></p>
+    <strong>Total: <span th:text="${totalCalories}"></span></strong>
+</div>
+<div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Menus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+    <div align="center">
+        <h1>Menus</h1>
+        <form action="#" th:action="@{/menus/add}" method="post" th:object="${menu}" class="form-group">
+            <label>Title:</label>
+            <input type="text" th:field="*{Title}" class="form-control" /><br/>
+            <select id="Products" th:field="*{Products}" multiple="multiple" class="form-control">
+                <option th:each="product : ${allProducts}"
+                        th:value="${product.ProductId}" th:text="|${product.ProductId} - ${product.Title} - ${product.Calories}|">
+                </option>
+            </select><br>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>

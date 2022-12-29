@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Products</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container">
+    <h1>Products</h1>
+    <a th:href="@{/products/add}" class="btn btn-primary">Add new</a>
+        <table class="table table-striped">
+            <thead  class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Calories</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.ProductId}" />
+            <td th:text="${product.Title}" />
+            <td th:text="${product.Calories}" />
+            <td>
+                <a th:href="@{/products/get/{id}/(id=${product.ProductId})}" class="btn btn-primary">Details</a>
+                <a th:href="@{/products/edit/{id}/(id=${product.ProductId})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/products/delete/{id}/(id=${product.ProductId})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>

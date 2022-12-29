@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Calculations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+<div align="center">
+    <h1>Calculate intake</h1>
+    <form action="#" th:action="@{/calculations/add}" method="post" th:object="${calculation}">
+        <label>Height:</label>
+        <input type="text" th:field="*{Height}" /><br/>
+        <label>Weight:</label>
+        <input type="text" th:field="*{Weight}" /><br/>
+        <label>Age:</label>
+        <input type="text" th:field="*{Age}" /><br/>
+        <label>Menu:</label>
+        <select id="MenuId" th:field="*{MenuId}">
+            <option th:each="menu : ${allMenus}"
+                    th:value="${menu.MenuId}" th:text="|${menu.MenuId} - ${menu.Title}|">
+            </option>
+        </select><br>
+        <button type="submit">Add</button>
+    </form>
+</div>
+</div>
+<div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>

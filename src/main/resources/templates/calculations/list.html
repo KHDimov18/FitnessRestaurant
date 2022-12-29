@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Calculations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container">
+    <h1>Calculations</h1>
+    <a th:href="@{/calculations}">Calculate</a>
+    <table class="table table-striped">
+        <thead  class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>Calories Intake</th>
+            <th>Extra Calories</th>
+            <th>Menu Id</th>
+            <th>Actions</th>
+        </tr></thead>
+        <tr th:each="calculation: ${calculations}">
+            <td th:text="${calculation.CalculationId}" />
+            <td th:text="${calculation.Height}" />
+            <td th:text="${calculation.Weight}" />
+            <td th:text="${calculation.Age}" />
+            <td th:text="${calculation.CaloriesIntake}" />
+            <td th:text="${calculation.ExtraCalories}" />
+            <td th:text="${calculation.MenuId}" />
+            <td>
+                <a th:href="@{/calculations/get/{id}/(id=${calculation.CalculationId})}">Details</a>
+                <a th:href="@{/calculations/delete/{id}/(id=${calculation.CalculationId})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>

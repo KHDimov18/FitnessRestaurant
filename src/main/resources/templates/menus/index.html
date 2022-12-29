@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: headerHead">
+    <title>Menus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+<h1>Menus</h1>
+<a th:href="@{/menus/add}">Add new</a>
+    <table class="table table-striped">
+        <thead  class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Total Calories</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+    <tr th:each="menu: ${menus}">
+        <td th:text="${menu.MenuId}" />
+        <td th:text="${menu.Title}" />
+        <td th:text="${menu.getTotalCalories()}" />
+        <td>
+            <a th:href="@{/menus/get/{id}/(id=${menu.MenuId})}">Details</a>
+            <a th:href="@{/menus/edit/{id}/(id=${menu.MenuId})}">Edit</a>
+            <a th:href="@{/menus/delete/{id}/(id=${menu.MenuId})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</div>
+<div th:replace="fragments/footer :: footer">&copy; 2022 footer</div>
+</body>
+</html>
